@@ -26,11 +26,10 @@
             font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.8; /* Improved readability */
             overflow-x: hidden;
         }
 
-        /* Background animated gradient */
         .bg-glow {
             position: fixed;
             top: -50%;
@@ -50,24 +49,25 @@
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Hero Section */
+        /* Hero Section Spacing */
         header {
-            min-height: 90vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             animation: fadeInUp 1s ease-out;
+            padding-top: 60px;
         }
 
         h1 {
             font-size: 4rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            line-height: 1.2;
+            margin-bottom: 24px;
             background: linear-gradient(to right, #60a5fa, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -76,18 +76,25 @@
         .subtitle {
             font-size: 1.5rem;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
             font-weight: 300;
+        }
+
+        .hero-desc {
+            color: var(--text-muted); 
+            max-width: 650px; 
+            margin-bottom: 48px; 
+            font-size: 1.15rem;
         }
 
         .btn-group {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
@@ -118,15 +125,15 @@
             transform: translateY(-2px);
         }
 
-        /* Section Global */
+        /* Section Spacing */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
             display: inline-block;
             position: relative;
         }
@@ -135,9 +142,9 @@
             content: '';
             position: absolute;
             width: 40px;
-            height: 3px;
+            height: 4px;
             background: var(--accent);
-            bottom: -10px;
+            bottom: -12px;
             left: 0;
             border-radius: 2px;
         }
@@ -145,8 +152,8 @@
         /* Grid Cards */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
         .card {
@@ -154,63 +161,121 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 30px;
+            padding: 36px;
             transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
         .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 15px;
+            font-size: 1.35rem;
+            margin-bottom: 16px;
             color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        /* App Store Link Styling */
+        .app-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            margin-top: auto;
+            width: fit-content;
+        }
+
+        .app-link:hover {
+            background: rgba(59, 130, 246, 0.25);
+            color: #fff;
+        }
+
+        .app-link svg {
+            width: 14px;
+            height: 14px;
+            margin-left: 6px;
         }
 
         /* Tags */
         .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: auto;
         }
 
         .tag {
-            background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa;
-            padding: 5px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* Experience Timeline */
         .timeline-item {
-            margin-bottom: 30px;
-            padding-left: 20px;
-            border-left: 2px solid var(--accent);
+            margin-bottom: 48px;
+            padding-left: 24px;
+            border-left: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
         }
 
         .timeline-date {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            font-size: 1.05rem;
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 50px 0;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -220,8 +285,9 @@
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            .subtitle { font-size: 1.2rem; }
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 1.25rem; }
+            section { padding: 70px 0; }
         }
     </style>
 </head>
@@ -234,7 +300,7 @@
         <p class="timeline-date">Hi, my name is</p>
         <h1>Manpreet Singh.</h1>
         <p class="subtitle">I build high-performance iOS applications.</p>
-        <p style="color: var(--text-muted); max-width: 600px; margin-bottom: 40px; font-size: 1.1rem;">
+        <p class="hero-desc">
             I am a mobile software engineer specializing in Swift, SwiftUI, and native reusable frameworks. With 4+ years of experience, I own product lifecycles from technical scoping to App Store release.
         </p>
         <div class="btn-group">
@@ -287,18 +353,33 @@
             <div class="card">
                 <h3>Awaken Platform</h3>
                 <p>Architected a white-label framework using custom Xcode Targets and Build Schemes, enabling a single codebase to power 5 independent client deployments.</p>
+                <a href="https://apps.apple.com/gb/app/the-s-y-s-t-e-m/id6752291058" target="_blank" class="app-link">View on App Store <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
             </div>
             <div class="card">
                 <h3>Ride-Hailing Ecosystem</h3>
-                <p>Built and scaled cross-border ride-hailing and cab-aggregator apps (Katto, Trailader) in Swift/SwiftUI, supporting low-latency booking flows.</p>
+                <p>Built and scaled cross-border ride-hailing and cab-aggregator apps (Katto Book a Ride, Katto Captain) in Swift/SwiftUI, supporting low-latency booking flows.</p>
+                <!-- Example of an actual link based on Katto Captain -->
+                <a href="https://apps.apple.com/nl/app/katto-captain-earn-with-pride/id6504393002" target="_blank" class="app-link">View on App Store <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
             </div>
             <div class="card">
                 <h3>Salon & Enterprise</h3>
                 <p>Directed development and delivery for consumer booking systems including MyMeevo, MegoClient, and One83Mane.</p>
+                <a href="https://apps.apple.com/gb/app/one83-mane-studio-app/id6745322647" target="_blank" class="app-link">View on App Store <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
             </div>
             <div class="card">
                 <h3>Wohnux Smart Home</h3>
                 <p>Engineered local-server device control, scheduling, and real-time status updates for lights, RGB, fans, and ACs.</p>
+                <a href="https://apps.apple.com/gb/app/wohnux-home-automation/id6742867728" target="_blank" class="app-link">View on App Store <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+            </div>
+            <div class="card">
+                <h3>Security Utilities</h3>
+                <p>Developed Device Defender (Anti Theft) and Opener (Direct Messages, Accept Requests) utilizing local device sensors and networking.</p>
+                <a href="https://apps.apple.com/gb/app/iantitheft/id1026601065" target="_blank" class="app-link">View on App Store <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+            </div>
+            <div class="card">
+                <h3>Entertainment</h3>
+                <p>Developed BringTheFun(BTF) The APP for Every Line Dancer.</p>
+                <a href="https://apps.apple.com/us/app/bring-the-fun/id1631535943" target="_blank" class="app-link">View on App Store <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
             </div>
         </div>
     </section>
@@ -306,7 +387,7 @@
     <section id="experience">
         <h2 class="section-title">Experience</h2>
         <div class="timeline-item">
-            <div class="timeline-date">Mar 2025 — Present</div>
+            <div class="timeline-date">Mar 2025 — Sept 2026</div>
             <h3>iOS Developer · KIT Labs Pvt. Ltd.</h3>
             <p style="color: var(--text-muted); margin-top: 10px;">Own end-to-end iOS architecture and multi-threading optimization. Setup automated CI/CD pipelines with Xcode Cloud and lead technical discussions across cross-functional teams.</p>
         </div>
@@ -318,7 +399,7 @@
     </section>
 
     <footer>
-        <p>Built by Manpreet Singh · Hosted on GitHub Pages</p>
+        <p>Built by Manpreet Singh</p>
     </footer>
 </div>
 
